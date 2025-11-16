@@ -14,6 +14,7 @@
 
 .fundraising-container {
     margin: auto;
+    margin-top: 2rem;
     width: 400px;
     max-width: 100%;
     text-align: center;
@@ -24,7 +25,15 @@
     text-decoration: none;
     font-weight: 600;
     display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease-in-out;
+}
+
+.fundraising-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .fundraising-section a:hover {

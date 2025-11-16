@@ -65,6 +65,7 @@ const FsaPlus = () => {
                   Next Social: October 9th @ Reitz 3310
                 </p>
               </div>
+              
 
               
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Fundraising.css';
+import FundraisingEvent from './FundraisingEvent.png';
 
 const Fundraising = () => {
   const style = {
@@ -23,10 +24,21 @@ const Fundraising = () => {
         <h1 className='shop-title title'>
           Fundraising Events
         </h1>
+        
         <div className='fundraising-container'>
-          <div>
-            <h2 className='title'>[COMING SOON]</h2>
+          <a href = 'https://www.instagram.com/p/DP26lEpjUsB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' target="_blank" rel="noopener noreferrer" className ='fundraising'>
+            <img src={FundraisingEvent} alt='Fundraising Event' />
+          </a>
+          
+          <div className ='fundraising-description'>
+            <p>
+            </p>
+            <p className='next-social'>
+            </p>
           </div>
+        
+        
+        
         </div>
       </section>
     </>
