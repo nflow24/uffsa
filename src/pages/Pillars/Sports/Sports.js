@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSwipeable } from 'react-swipeable'
 // import PillarHero from '../../../components/Pillars/PillarHero';
 // import PillarDescription from '../../../components/Pillars/PillarDescription';
 // import PillarSignatureEvents from '../../../components/Pillars/PillarSignatureEvents';
@@ -18,9 +19,30 @@ import sportsLogo from '../../../assets/logos/sports.png';
 import Flag_football from './photos/CO-Rec Flag football.jpg';
 import GBM1 from './photos/GBM 1 Menchies After-Social.jpg';
 import GO_Fest from './photos/GO_Fest Dodgeball FSA.png';
+import Pickleball from './photos/Pickleball.jpg';
+import Tailgate from './photos/UF vs USF 9_6_25.jpg';
+import Volleyball from './photos/Volleyball.jpg';
 
 
 const Sports = () => {
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => {
+            // Find current slide and navigate to next
+            const currentHash = window.location.hash;
+            const slideNumber = parseInt(currentHash.replace('#carousel__slide', '')) || 1;
+            const nextSlide = slideNumber === 6 ? 1 : slideNumber + 1;
+            window.location.hash = `#carousel__slide${nextSlide}`;
+        },
+        onSwipedRight: () => {
+            // Find current slide and navigate to previous
+            const currentHash = window.location.hash;
+            const slideNumber = parseInt(currentHash.replace('#carousel__slide', '')) || 1;
+            const prevSlide = slideNumber === 1 ? 6 : slideNumber - 1;
+            window.location.hash = `#carousel__slide${prevSlide}`;
+        },
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true
+    });
     // const [signatureEventsValue, setSignatureEventsValue] = React.useState(0);
     // const [regularActivitiesValue, setRegularActivitiesValue] = React.useState(0);
 
@@ -31,6 +53,7 @@ const Sports = () => {
     // const handleRegularActivitiesChange = (event, newValue) => {
     //     setRegularActivitiesValue(newValue);
     // };
+
 
     return (<>
         <section className="pillar-hero sports-hero">
@@ -63,12 +86,111 @@ const Sports = () => {
             content="Year after year UFFSA brings together its finest athletes to participate in UF intramural sports. During the Fall semester, 7 on 7 flag football is king. The largest crowds gather around SW fields for the games and the FSA crowds are among the largest of them all. Everyone is welcome to play and learn the sport with FSA’s best. There are men’s, women’s, and coed teams. Anyone interested in starting an FSA team in another intramural sport should contact the FSA Sports coordinator for direction."
         /> 
         <h1 classname='title'>Sports Gallery</h1>*/}
-        <section className='sports-gallery'>
-            <div className='sports-gallery__item'>
-                <img src={Flag_football} alt="Flag Football" />
-            </div>
+        <section className="sports-gallery">
+            <h1 className="title">Sports Gallery</h1>
+            <section
+                className="carousel"
+                aria-label="Gallery"
+                {...swipeHandlers}
+            >
+                <ol className="carousel__viewport">
+                    <li id="carousel__slide1"
+                        tabIndex="0"
+                        className="carousel__slide">
+                        <div className="carousel__snapper">
+                            <img src={Flag_football} alt="Co-Rec Flag Football" className="carousel__image" />
+                        </div>
+                        <a href="#carousel__slide6"
+                            className="carousel__prev">Go to last slide</a>
+                        <a href="#carousel__slide2"
+                            className="carousel__next">Go to next slide</a>
+                    </li>
+                    <li id="carousel__slide2"
+                        tabIndex="0"
+                        className="carousel__slide">
+                        <div className="carousel__snapper">
+                            <img src={GBM1} alt="GMB 1" className="carousel__image" />
+                        </div>
+                        <a href="#carousel__slide1"
+                            className="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide3"
+                            className="carousel__next">Go to next slide</a>
+                    </li>
+                    <li id="carousel__slide3"
+                        tabIndex="0"
+                        className="carousel__slide">
+                        <div className="carousel__snapper">
+                            <img src={GO_Fest} alt="Go Fest" className="carousel__image" />
+                        </div>
+                        <a href="#carousel__slide2"
+                            className="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide4"
+                            className="carousel__next">Go to next slide</a>
+                    </li>
+                    <li id="carousel__slide4"
+                        tabIndex="0"
+                        className="carousel__slide">
+                        <div className="carousel__snapper">
+                            <img src={Pickleball} alt="Pickleball" className="carousel__image" />
+                        </div>
+                        <a href="#carousel__slide3"
+                            className="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide5"
+                            className="carousel__next">Go to first slide</a>
+                    </li>
+                    <li id="carousel__slide5"
+                        tabIndex="0"
+                        className="carousel__slide">
+                        <div className="carousel__snapper">
+                            <img src={Tailgate} alt="Tailgate" className="carousel__image" />
+                        </div>
+                        <a href="#carousel__slide4"
+                            className="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide6"
+                            className="carousel__next">Go to first slide</a>
+                    </li>
+                    <li id="carousel__slide6"
+                        tabIndex="0"
+                        className="carousel__slide">
+                        <div className="carousel__snapper">
+                            <img src={Volleyball} alt="Volleyball" className="carousel__image" />
+                        </div>
+                        <a href="#carousel__slide5"
+                            className="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide1"
+                            className="carousel__next">Go to first slide</a>
+                    </li>
+                </ol>
+                <aside className="carousel__navigation">
+                    <ol className="carousel__navigation-list">
+                        <li className="carousel__navigation-item">
+                            <a href="#carousel__slide1"
+                                className="carousel__navigation-button">Go to slide 1</a>
+                        </li>
+                        <li className="carousel__navigation-item">
+                            <a href="#carousel__slide2"
+                                className="carousel__navigation-button">Go to slide 2</a>
+                        </li>
+                        <li className="carousel__navigation-item">
+                            <a href="#carousel__slide3"
+                                className="carousel__navigation-button">Go to slide 3</a>
+                        </li>
+                        <li className="carousel__navigation-item">
+                            <a href="#carousel__slide4"
+                                className="carousel__navigation-button">Go to slide 4</a>
+                        </li>
+                        <li className="carousel__navigation-item">
+                            <a href="#carousel__slide5"
+                                className="carousel__navigation-button">Go to slide 5</a>
+                        </li>
+                        <li className="carousel__navigation-item">
+                            <a href="#carousel__slide6"
+                                className="carousel__navigation-button">Go to slide 6</a>
+                        </li>
+                    </ol>
+                </aside>
+            </section>
         </section>
-
         <section className='sports-description'>
             <div className='sports-calendar__container' id='events'>
                 <h1 className='title'>Sports Calendar</h1>

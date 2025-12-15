@@ -13,9 +13,9 @@ const Events = () => {
           <h2 className="events-list__header title">☀️Summer B Edition: GoFest!☀️</h2>
           <p>
             <p>
-            Want to join in on the fun but have no idea what’s going on? 
-            Have no fear, the NMG is here! We’d love to have you at our events this GoFest weekend, so come check it out!
-            Make sure to check the main post on <strong>@uffsa’s</strong> page and follow <strong>@uffsafirst_years </strong>for future guides and first-year posts‼️
+              Want to join in on the fun but have no idea what’s going on?
+              Have no fear, the NMG is here! We’d love to have you at our events this GoFest weekend, so come check it out!
+              Make sure to check the main post on <strong>@uffsa’s</strong> page and follow <strong>@uffsafirst_years </strong>for future guides and first-year posts‼️
             </p>
 
             𖤓°⋆.ೃ࿔*:･𖤓°⋆.ೃ࿔*:･𖤓°⋆.ೃ࿔*:･
